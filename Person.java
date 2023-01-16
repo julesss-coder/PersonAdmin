@@ -1,21 +1,19 @@
 package com.company;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Person {
     String firstName;
     String lastName;
-    Date dateOfBirth;
+    LocalDate dateOfBirth;
     Address address;
-    // Change to enum
-    String sex;
+    Sex sex;
 
     Person(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this(firstName, lastName, null, null);
     }
 
-    Person(String firstName, String lastName, Date dateOfBirth, Address address, String sex) {
+    Person(String firstName, String lastName, LocalDate dateOfBirth, Address address, Sex sex) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -23,12 +21,19 @@ public class Person {
         this.sex = sex;
     }
 
-    Person(String firstName, String lastName, Date dateOfBirth, String sex) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.sex = sex;
+    Person(String firstName, String lastName, LocalDate dateOfBirth, Sex sex) {
+        this(firstName, lastName, dateOfBirth, null, sex);
     }
 
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", address=" + address +
+                ", sex='" + sex + '\'' +
+                '}';
+    }
 }
