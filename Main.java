@@ -10,7 +10,7 @@ public class Main {
         // How can I step into `Address` from here?
         // Step into -> all methods you can step into are highlighted. Click Address.
         // OR: Set breakpoint in class Address and step into it.
-        personManager.createPerson("Julia", "F", LocalDate.of(1982, 12, 05), new Address("Neufelderstrasse", "10b", 12, "4030"), Sex.FEMALE);
+        personManager.createPerson("Julia", "F", LocalDate.of(1990, 01, 01), new Address("Hauptplatz", "1", 1, "4040"), Sex.FEMALE);
         personManager.createPerson("Mandy", "Moore");
         personManager.createPerson("Jeffrey", "Lebowski", LocalDate.of(1990, 12, 15), Sex.MALE );
 
