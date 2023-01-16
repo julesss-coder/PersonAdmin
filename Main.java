@@ -14,16 +14,11 @@ public class Main {
         personManager.createPerson("Mandy", "Moore");
         personManager.createPerson("Jeffrey", "Lebowski", LocalDate.of(1990, 12, 15), Sex.MALE );
 
-        System.out.println("Phone book after adding persons:");
-        for (Person person: personManager.persons) {
-            System.out.println(person.toString());
-        }
+        personManager.getPerson("Lebowski");
+
+        personManager.listPersons();
 
         personManager.deletePerson("Lebowski");
-
-        System.out.println("Phone book after deleting a person:");
-        for (Person person: personManager.persons) {
-            System.out.println(person.toString());
-        }
+        personManager.listPersons();
     }
 }
