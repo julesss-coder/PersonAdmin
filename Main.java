@@ -1,17 +1,29 @@
-// Keine usereingaben machen, sondern einfach direkt im Code Personen hinzufuegen
-// ArrayList zu LinkedList machen, bevor ich getter und setter-Methoden umsetze
-// Date ist deprecated --> LocalDate
-
 package com.company;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Main {
 
     public static void main(String[] args) {
         PersonManager personManager = new PersonManager();
-        personManager.createPerson("Julia", "F", new Date(05, 12, 1982), new Address("Neufelderstrasse", "10b", 12, "4030"), "female");
+
+        // How can I step into `Address` from here?
+        // Step into -> all methods you can step into are highlighted. Click Address.
+        // OR: Set breakpoint in class Address and step into it.
+        personManager.createPerson("Julia", "F", LocalDate.of(1982, 12, 05), new Address("Neufelderstrasse", "10b", 12, "4030"), Sex.FEMALE);
         personManager.createPerson("Mandy", "Moore");
-        personManager.createPerson("Jeffrey", "Lebowski", new Date(01, 05, 1957), "male");
+        personManager.createPerson("Jeffrey", "Lebowski", LocalDate.of(1990, 12, 15), Sex.MALE );
+
+        System.out.println("Phone book after adding persons:");
+        for (Person person: personManager.persons) {
+            System.out.println(person.toString());
+        }
+
+        personManager.deletePerson("Lebowski");
+
+        System.out.println("Phone book after deleting a person:");
+        for (Person person: personManager.persons) {
+            System.out.println(person.toString());
+        }
     }
 }
