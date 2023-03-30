@@ -3,13 +3,11 @@ package com.company;
 public class Address {
     String streetName;
     String streetNumber;
-    int houseNumber;
-    String zipCode; // zip codes can include characters other than numbers
+    String zipCode; // Data type string, as zip codes can include characters other than numbers.
 
-    Address(String streetName, String streetNumber, int houseNumber, String zipCode) {
+    Address(String streetName, String streetNumber, String zipCode) {
         this.streetName = streetName;
         this.streetNumber = streetNumber;
-        this.houseNumber = houseNumber;
         this.zipCode = zipCode;
     }
 
@@ -18,7 +16,6 @@ public class Address {
         return "Address{" +
                 "streetName='" + streetName + '\'' +
                 ", streetNumber=" + streetNumber +
-                ", houseNumber=" + houseNumber +
                 ", zipCode='" + zipCode + '\'' +
                 '}';
     }
